@@ -1,0 +1,15 @@
+defaults:
+  - default
+
+
+extractor:
+  downsample_rate: 3
+  fpn_downsample_rate: [3, 6, 12]
+
+inference:
+  similarity_thr: 0.7
+  progx:
+    conf: 0.999
+    neighborhood_ball_radius: 50
+    spatial_coherence_weight: 0.1
+    maximum_tanimoto_similarity: 0.999

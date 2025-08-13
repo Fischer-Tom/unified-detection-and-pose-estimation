@@ -1,0 +1,32 @@
+extractor:
+  extractor_dim: 256
+  downsample_rate: 4
+  fpn_resolutions: ["res2", "res3","res4"]
+  fpn_downsample_rate: [4, 8, 14]
+  fpn_dim: [256, 384, 512]
+  bottleneck_dim: 128
+  num_heads: 4
+  enc_layers: 6
+  dropout: 0.2
+  ffn_dim: 512
+  mesh_dim: 128
+
+mesh:
+  mesh_dim: 128
+  max_n: ~
+  precision: "bf16"
+  ema: True
+  momentum: 0.9
+  momentum_warmup: 100
+
+train:
+  kappa_main: 0.07
+  bg_loss_weight: 1.0
+  bg_loss: "dice"
+
+inference:
+  pnp_error_thr: 4
+  refine_error_thr: 4
+  similarity_thr: 0.8
+
+

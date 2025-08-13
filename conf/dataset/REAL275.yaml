@@ -1,0 +1,10 @@
+name: "REAL275"
+source: "CAMERA+Real"
+syn_ratio: 3
+for_test: ~
+image_shape: [480, 640]
+classes: ["bottle", "bowl", "camera", "can", "laptop", "mug"]
+paths:
+  data_path: "/hnvme"
+  cad_path: "/hnvme/obj_models"
+  mesh_path: "./Prior/REAL275"

@@ -1,0 +1,9 @@
+name: "Dummy"
+for_test: ~
+image_shape: [852, 1096]
+classes: ["bottle", "box", "can", "cup", "cutlery", "glass", "remote", "shoe", "teapot", "tube"]
+paths:
+  train_path: "/share_chairilg/data/HouseCat6D"
+  test_path: "/share_chairilg/data/HouseCat6D"
+  mesh_path: "/share_chairilg/data/HouseCat6D/Prior"
+  anno_folder: "annotations/gts/real_test"

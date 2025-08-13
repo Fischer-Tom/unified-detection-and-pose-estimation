@@ -1,0 +1,47 @@
+defaults:
+  - _self_
+  - params: REAL275
+  - dataset: REAL275
+
+seed: 123123
+eval_9d: True
+wandb:
+  project: uni_dp
+  notes: placeholder
+  mode: disabled
+
+ddp:
+  distributed: false  # Will be overridden by train.sh based on GPU detection
+  gpu: 0              # Will be set automatically by torchrun
+  world_size: 1       # Will be overridden by train.sh based on GPU detection  
+  dist_url: "env://"  # Use environment variables set by torchrun
+  rank: ~             # Will be set automatically by torchrun
+
+
+checkpointing:
+  log_dir: ~
+  load_path: ~
+  scale_net_path: ~
+  save_path: ~
+  save_every: 25_000
+  val_every: 150_000
+  result_dir: ~
+
+
+data_loader:
+  train:
+    num_workers: 32
+    batch_size: 10
+  test:
+    num_workers: 32
+    batch_size: 1
+
+optimizer:
+  name: AdamW
+  train_iters: 150_000
+  eta_min: 1e-7
+  lr: 1e-4
+  weight_decay: 0.05
+  clip_grad_norm: 0.0
+  warmup_iters: 500
+
