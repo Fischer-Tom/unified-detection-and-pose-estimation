@@ -521,8 +521,6 @@ class Trainer:
             
             try:
                 for batch_idx, sample in enumerate(test_loader):
-                    if batch_idx == 10:
-                        break
                     try:
                         if self._should_stop():
                             return
